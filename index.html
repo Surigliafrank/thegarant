@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Garant - Your Luxury Travel Concierge</title>
+    <meta name="description" content="The Garant is your AI-powered luxury travel concierge. Get personalized travel itineraries, flights, hotels, and experiences tailored to your preferences.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #d4af37, #f5e6a3, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #b0b0b0;
+            margin-bottom: 3rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #d0d0d0;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #d4af37, #c4a035);
+            color: #0a0a0a;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #f5f5f5;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #141420, #1a1a2e);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .feature-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: #d4af37;
+        }
+
+        .feature-card p {
+            color: #999;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* How it Works */
+        .how-it-works {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, transparent, rgba(26, 26, 46, 0.5), transparent);
+        }
+
+        .steps {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #d4af37;
+            line-height: 1;
+            min-width: 60px;
+        }
+
+        .step-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #f5f5f5;
+        }
+
+        .step-content p {
+            color: #888;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section .section-title {
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            color: #888;
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo-text { font-size: 2.5rem; }
+            .tagline { font-size: 1rem; }
+            .hero-description { font-size: 1rem; }
+            .section-title { font-size: 2rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .step { gap: 1.25rem; }
+            .step-number { font-size: 2rem; min-width: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="logo-text">THE GARANT</h1>
+            <p class="tagline">Your Luxury Travel Concierge</p>
+            <p class="hero-description">
+                Your personal AI travel expert on Telegram. Tell us your dream trip and we'll craft a complete,
+                tailor-made itinerary with flights, hotels, restaurants, and unforgettable experiences.
+            </p>
+            <a href="https://t.me/YOUR_BOT_USERNAME" class="cta-button">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                Start Planning Your Trip
+            </a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <h2 class="section-title">Everything You Need, One Conversation</h2>
+        <p class="section-subtitle">We handle every detail so you can focus on enjoying</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">&#9992;</div>
+                <h3>Flights</h3>
+                <p>We find the best flights for your dates and budget, comparing hundreds of airlines to get you the perfect route.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#127976;</div>
+                <h3>Hotels</h3>
+                <p>From boutique gems to luxury resorts, we match you with the ideal accommodation for your style and budget.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#127860;</div>
+                <h3>Restaurants</h3>
+                <p>Discover the best local cuisine with our handpicked restaurant recommendations, from hidden gems to fine dining.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#127963;</div>
+                <h3>Experiences</h3>
+                <p>Tours, adventures, cultural experiences. We curate activities that make your trip truly unforgettable.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128663;</div>
+                <h3>Transportation</h3>
+                <p>Airport transfers, car rentals, local transport. We plan how you'll move around, stress-free.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128737;</div>
+                <h3>Travel Insurance</h3>
+                <p>Travel with peace of mind. We recommend the best insurance options to keep you covered.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="how-it-works">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Your dream trip is just a conversation away</p>
+        <div class="steps">
+            <div class="step">
+                <span class="step-number">01</span>
+                <div class="step-content">
+                    <h3>Start the conversation</h3>
+                    <p>Open The Garant on Telegram, choose your language, and tell us about your dream trip.</p>
+                </div>
+            </div>
+            <div class="step">
+                <span class="step-number">02</span>
+                <div class="step-content">
+                    <h3>We craft your itinerary</h3>
+                    <p>Our AI concierge asks you a few questions and builds a complete, personalized travel plan.</p>
+                </div>
+            </div>
+            <div class="step">
+                <span class="step-number">03</span>
+                <div class="step-content">
+                    <h3>Review your proposals</h3>
+                    <p>Receive 3 tailored options with flights, hotels, experiences, and everything you need.</p>
+                </div>
+            </div>
+            <div class="step">
+                <span class="step-number">04</span>
+                <div class="step-content">
+                    <h3>Book and travel</h3>
+                    <p>Choose your favorite option, book with a click, and start packing. We've got everything covered.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2 class="section-title">Ready to Plan Your Next Adventure?</h2>
+        <p>Available 24/7 on Telegram. No app to download. Just start chatting.</p>
+        <a href="https://t.me/YOUR_BOT_USERNAME" class="cta-button">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            Start on Telegram
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 The Garant. All rights reserved. | <a href="https://t.me/YOUR_BOT_USERNAME">Telegram</a></p>
+    </footer>
+
+</body>
+</html>
