@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Travel Destinations - The Garant</title>
+    <meta name="description" content="Explore the world's best travel destinations. Discover guides for Rome, Barcelona, Paris, London, Amsterdam, and Dubai with hotel recommendations and travel tips.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-logo">
+            <img src="logo.png" alt="The Garant">
+        </a>
+        <button class="menu-toggle" onclick="document.querySelector('.navbar-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+        <ul class="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html" class="active">Destinations</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Top Destinations</h1>
+        <p>Explore our curated selection of the world's most captivating travel destinations</p>
+    </section>
+
+    <!-- Destinations Grid -->
+    <div class="destinations-grid">
+
+        <div class="destination-card">
+            <div class="destination-img">&#127471;&#127481;</div>
+            <div class="destination-info">
+                <p class="destination-country">Italy</p>
+                <h3>Rome</h3>
+                <p>The Eternal City blends ancient wonders with vibrant modern life. Explore the Colosseum, toss a coin in the Trevi Fountain, and savor authentic pasta in Trastevere. Rome offers history, art, and gastronomy at every corner.</p>
+                <p><strong>Best time to visit:</strong> April to June, September to October</p>
+                <p><strong>Average hotel price:</strong> $120 - $300 per night</p>
+                <a href="blog/best-hotels-rome-2026.html" class="read-more">Read our Rome hotel guide &rarr;</a>
+            </div>
+        </div>
+
+        <div class="destination-card">
+            <div class="destination-img">&#127466;&#127480;</div>
+            <div class="destination-info">
+                <p class="destination-country">Spain</p>
+                <h3>Barcelona</h3>
+                <p>Barcelona dazzles with Gaudi's masterpieces, sun-kissed beaches, and a legendary food scene. Walk down Las Ramblas, marvel at the Sagrada Familia, and enjoy tapas by the Mediterranean Sea.</p>
+                <p><strong>Best time to visit:</strong> May to June, September to October</p>
+                <p><strong>Average hotel price:</strong> $100 - $250 per night</p>
+                <a href="blog/barcelona-travel-guide.html" class="read-more">Read our Barcelona guide &rarr;</a>
+            </div>
+        </div>
+
+        <div class="destination-card">
+            <div class="destination-img">&#127467;&#127479;</div>
+            <div class="destination-info">
+                <p class="destination-country">France</p>
+                <h3>Paris</h3>
+                <p>The City of Light enchants with its iconic landmarks, world-class museums, and romantic atmosphere. From the Eiffel Tower to Montmartre, Paris is a feast for all senses — especially taste.</p>
+                <p><strong>Best time to visit:</strong> April to June, September to November</p>
+                <p><strong>Average hotel price:</strong> $150 - $400 per night</p>
+                <a href="#" class="read-more">Paris guide coming soon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="destination-card">
+            <div class="destination-img">&#127468;&#127463;</div>
+            <div class="destination-info">
+                <p class="destination-country">United Kingdom</p>
+                <h3>London</h3>
+                <p>A city where centuries of history meet cutting-edge culture. Explore royal palaces, world-famous museums (many are free!), vibrant markets, and an incredibly diverse culinary scene.</p>
+                <p><strong>Best time to visit:</strong> May to September</p>
+                <p><strong>Average hotel price:</strong> $150 - $350 per night</p>
+                <a href="#" class="read-more">London guide coming soon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="destination-card">
+            <div class="destination-img">&#127475;&#127473;</div>
+            <div class="destination-info">
+                <p class="destination-country">Netherlands</p>
+                <h3>Amsterdam</h3>
+                <p>Picturesque canals, world-class art, and a laid-back atmosphere make Amsterdam one of Europe's most charming capitals. Cycle along the canals, visit the Rijksmuseum, and explore vibrant neighborhoods.</p>
+                <p><strong>Best time to visit:</strong> April to May, September to November</p>
+                <p><strong>Average hotel price:</strong> $130 - $300 per night</p>
+                <a href="#" class="read-more">Amsterdam guide coming soon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="destination-card">
+            <div class="destination-img">&#127462;&#127466;</div>
+            <div class="destination-info">
+                <p class="destination-country">United Arab Emirates</p>
+                <h3>Dubai</h3>
+                <p>A futuristic metropolis rising from the desert, Dubai offers luxury shopping, ultramodern architecture, and thrilling desert adventures. From the Burj Khalifa to traditional souks, contrast defines this city.</p>
+                <p><strong>Best time to visit:</strong> November to March</p>
+                <p><strong>Average hotel price:</strong> $120 - $500 per night</p>
+                <a href="#" class="read-more">Dubai guide coming soon &rarr;</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2 class="section-title">Can't Find Your Dream Destination?</h2>
+        <p>Our AI concierge covers hundreds of destinations worldwide. Start a chat and tell us where you want to go.</p>
+        <button class="cta-button" onclick="window.location.href='index.html'">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+            Plan Your Trip
+        </button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="The Garant">
+                <p>Your AI-powered travel concierge. We craft personalized itineraries with flights, hotels, and experiences tailored to your preferences.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Garant. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

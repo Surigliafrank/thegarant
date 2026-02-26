@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog - The Garant</title>
+    <meta name="description" content="Read travel guides, hotel reviews, and destination tips on The Garant blog. Get expert advice for your next trip.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-logo">
+            <img src="logo.png" alt="The Garant">
+        </a>
+        <button class="menu-toggle" onclick="document.querySelector('.navbar-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+        <ul class="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Travel Blog</h1>
+        <p>Guides, tips, and inspiration for your next adventure</p>
+    </section>
+
+    <!-- Blog Grid -->
+    <div class="blog-grid">
+
+        <div class="blog-card">
+            <span class="blog-tag">Hotel Guide</span>
+            <h3><a href="blog/best-hotels-rome-2026.html">Best Hotels in Rome for Every Budget in 2026</a></h3>
+            <p class="blog-date">February 15, 2026</p>
+            <p>From luxury five-star retreats near the Spanish Steps to charming boutique hotels in Trastevere, discover the best places to stay in Rome this year.</p>
+            <a href="blog/best-hotels-rome-2026.html" class="read-more">Read more &rarr;</a>
+        </div>
+
+        <div class="blog-card">
+            <span class="blog-tag">Destination Guide</span>
+            <h3><a href="blog/barcelona-travel-guide.html">The Ultimate Barcelona Travel Guide: What to See, Eat, and Do</a></h3>
+            <p class="blog-date">February 8, 2026</p>
+            <p>Everything you need to know for an unforgettable trip to Barcelona — from Gaudi's masterpieces to hidden tapas bars and the best beaches.</p>
+            <a href="blog/barcelona-travel-guide.html" class="read-more">Read more &rarr;</a>
+        </div>
+
+        <div class="blog-card">
+            <span class="blog-tag">Travel Tips</span>
+            <h3><a href="blog/travel-tips-europe.html">10 Essential Travel Tips for First-Time Europe Visitors</a></h3>
+            <p class="blog-date">January 28, 2026</p>
+            <p>Planning your first trip to Europe? These practical tips cover everything from saving money on flights to navigating public transport like a local.</p>
+            <a href="blog/travel-tips-europe.html" class="read-more">Read more &rarr;</a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="The Garant">
+                <p>Your AI-powered travel concierge. We craft personalized itineraries with flights, hotels, and experiences tailored to your preferences.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Garant. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

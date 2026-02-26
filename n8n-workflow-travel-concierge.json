@@ -1,0 +1,97 @@
+{
+  "name": "The Garant - Travel Concierge Chat",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "Welcome to The Garant! \nI'm your AI travel concierge. Tell me about your dream trip and I'll help you plan everything — flights, hotels, restaurants, and experiences.\n\nWhere would you like to go?",
+        "options": {}
+      },
+      "id": "chat-trigger",
+      "name": "When chat message received",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [400, 300],
+      "webhookId": "travel-concierge-chat"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are The Garant, a luxury AI travel concierge. Your role is to help travelers plan their perfect trip.\n\nYour personality:\n- Professional yet warm and friendly\n- Enthusiastic about travel\n- Knowledgeable about destinations worldwide\n- You speak in the language the user writes to you\n\nHow you work:\n1. First, ask the user about their dream destination (if they haven't mentioned one)\n2. Ask about: travel dates, budget range, number of travelers, interests (culture, food, adventure, relaxation)\n3. Based on their answers, create a detailed itinerary proposal including:\n   - Recommended flights (airlines, approximate prices)\n   - Hotel suggestions (3 options: budget, mid-range, luxury with approximate prices)\n   - Restaurant recommendations\n   - Must-see attractions and experiences\n   - Transportation tips\n   - Practical tips (best time to visit, what to pack, local customs)\n\nImportant rules:\n- Always ask questions one or two at a time, don't overwhelm the user\n- Give specific, actionable recommendations with approximate prices\n- If the user mentions a budget, respect it strictly\n- Suggest booking hotels through our website for the best deals\n- Be concise but thorough\n- Use a conversational, engaging tone\n- If you don't know something specific, say so honestly\n- Format responses clearly with sections and bullet points when presenting itineraries"
+        }
+      },
+      "id": "ai-agent",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [640, 300]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o-mini",
+        "options": {
+          "temperature": 0.7,
+          "maxTokens": 1024
+        }
+      },
+      "id": "openai-chat",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [560, 500]
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.sessionId }}",
+        "contextWindowLength": 20
+      },
+      "id": "memory",
+      "name": "Window Buffer Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [740, 500]
+    }
+  ],
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [],
+  "triggerCount": 1
+}

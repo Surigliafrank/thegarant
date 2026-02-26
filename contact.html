@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - The Garant</title>
+    <meta name="description" content="Get in touch with The Garant. Contact us for travel inquiries, partnership opportunities, or feedback about our concierge service.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-logo">
+            <img src="logo.png" alt="The Garant">
+        </a>
+        <button class="menu-toggle" onclick="document.querySelector('.navbar-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+        <ul class="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you</p>
+    </section>
+
+    <!-- Contact Grid -->
+    <div class="contact-grid">
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-item-icon">&#128172;</div>
+                <div>
+                    <h3>Chat With Us</h3>
+                    <p>The fastest way to reach us is through our AI concierge chat on the <a href="index.html">homepage</a>. Available 24/7 for travel planning and general inquiries.</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-item-icon">&#9993;</div>
+                <div>
+                    <h3>Email</h3>
+                    <p>For business inquiries, partnerships, and press: <br><strong>hello@thegarant.com</strong></p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-item-icon">&#128242;</div>
+                <div>
+                    <h3>Telegram</h3>
+                    <p>You can also reach our concierge on Telegram for travel planning assistance.<br>
+                    <a href="https://t.me/The_Garant_1_bot">@The_Garant_1_bot</a></p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-item-icon">&#128337;</div>
+                <div>
+                    <h3>Response Time</h3>
+                    <p>Our AI concierge responds instantly. For email inquiries, we typically respond within 24 hours on business days.</p>
+                </div>
+            </div>
+        </div>
+
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for your message! We will get back to you within 24 hours.');">
+            <input type="text" placeholder="Your name" required>
+            <input type="email" placeholder="Your email" required>
+            <input type="text" placeholder="Subject">
+            <textarea placeholder="Your message..." required></textarea>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="The Garant">
+                <p>Your AI-powered travel concierge. We craft personalized itineraries with flights, hotels, and experiences tailored to your preferences.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Garant. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

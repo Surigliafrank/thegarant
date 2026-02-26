@@ -8,236 +8,24 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #000000;
-            color: #f5f5f5;
-            overflow-x: hidden;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-            position: relative;
-            background: #000000;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: transparent;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-        }
-
-        .logo-img {
-            max-width: 400px;
-            width: 100%;
-            height: auto;
-            margin-bottom: 1.5rem;
-        }
-
-        .tagline {
-            font-size: 1.3rem;
-            font-weight: 300;
-            color: #b0b0b0;
-            margin-bottom: 3rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-
-        .hero-description {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: #d0d0d0;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, #d4af37, #c4a035);
-            color: #000000;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            letter-spacing: 0.05em;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
-        }
-
-        .cta-button svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 6rem 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: #f5f5f5;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #888;
-            font-size: 1.1rem;
-            margin-bottom: 4rem;
-            font-weight: 300;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: #0a0a0a;
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            border-radius: 16px;
-            padding: 2.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            border-color: rgba(212, 175, 55, 0.4);
-            transform: translateY(-4px);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .feature-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            margin-bottom: 0.75rem;
-            color: #d4af37;
-        }
-
-        .feature-card p {
-            color: #999;
-            line-height: 1.7;
-            font-weight: 300;
-        }
-
-        /* How it Works */
-        .how-it-works {
-            padding: 6rem 2rem;
-            background: transparent;
-        }
-
-        .steps {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .step {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            align-items: flex-start;
-        }
-
-        .step-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            color: #d4af37;
-            line-height: 1;
-            min-width: 60px;
-        }
-
-        .step-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #f5f5f5;
-        }
-
-        .step-content p {
-            color: #888;
-            line-height: 1.7;
-            font-weight: 300;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-
-        .cta-section .section-title {
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-section p {
-            color: #888;
-            font-size: 1.1rem;
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-        }
-
-        /* Footer */
-        footer {
-            padding: 3rem 2rem;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            color: #555;
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: #d4af37;
-            text-decoration: none;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .logo-img { max-width: 280px; }
-            .tagline { font-size: 1rem; }
-            .hero-description { font-size: 1rem; }
-            .section-title { font-size: 2rem; }
-            .features-grid { grid-template-columns: 1fr; }
-            .step { gap: 1.25rem; }
-            .step-number { font-size: 2rem; min-width: 40px; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-logo">
+            <img src="logo.png" alt="The Garant">
+        </a>
+        <button class="menu-toggle" onclick="document.querySelector('.navbar-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+        <ul class="navbar-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <!-- Hero -->
     <section class="hero">
@@ -245,12 +33,16 @@
             <img src="logo.png" alt="The Garant" class="logo-img">
             <p class="tagline">Your Travel Concierge</p>
             <p class="hero-description">
-                Your personal AI travel expert on Telegram. Tell us your dream trip and we'll craft a complete,
+                Your personal AI travel expert. Tell us your dream trip and we'll craft a complete,
                 tailor-made itinerary with flights, hotels, restaurants, and unforgettable experiences.
             </p>
-            <a href="https://t.me/The_Garant_1_bot" class="cta-button">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            <button class="cta-button" onclick="document.querySelector('.n8n-chat button.chat-toggle, .n8n-chat [data-chat-toggle]')?.click()">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
                 Start Planning Your Trip
+            </button>
+            <a href="https://t.me/The_Garant_1_bot" class="cta-secondary">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="width:16px;height:16px"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                Also available on Telegram
             </a>
         </div>
     </section>
@@ -302,7 +94,7 @@
                 <span class="step-number">01</span>
                 <div class="step-content">
                     <h3>Start the conversation</h3>
-                    <p>Open The Garant on Telegram, choose your language, and tell us about your dream trip.</p>
+                    <p>Open the chat on our website, tell us about your dream destination and travel preferences.</p>
                 </div>
             </div>
             <div class="step">
@@ -332,17 +124,86 @@
     <!-- CTA -->
     <section class="cta-section">
         <h2 class="section-title">Ready to Plan Your Next Adventure?</h2>
-        <p>Available 24/7 on Telegram. No app to download. Just start chatting.</p>
-        <a href="https://t.me/The_Garant_1_bot" class="cta-button">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-            Start on Telegram
-        </a>
+        <p>Available 24/7. Start chatting with our AI concierge and get your personalized itinerary.</p>
+        <button class="cta-button" onclick="document.querySelector('.n8n-chat button.chat-toggle, .n8n-chat [data-chat-toggle]')?.click()">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+            Chat With Us Now
+        </button>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 The Garant. All rights reserved. | <a href="https://t.me/The_Garant_1_bot">Telegram</a></p>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="The Garant">
+                <p>Your AI-powered travel concierge. We craft personalized itineraries with flights, hotels, and experiences tailored to your preferences.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Garant. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- n8n Chat Widget -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+        createChat({
+            webhookUrl: 'https://thegarant.app.n8n.cloud/webhook/travel-concierge-chat/chat',
+            mode: 'window',
+            chatInputKey: 'chatInput',
+            metadata: {},
+            showWelcomeScreen: false,
+            initialMessages: [
+                'Welcome to The Garant! How can I help you plan your next trip?'
+            ],
+            i18n: {
+                en: {
+                    title: 'The Garant',
+                    subtitle: 'Your Travel Concierge',
+                    inputPlaceholder: 'Type your message...',
+                    getStarted: 'Start Planning',
+                    footer: ''
+                }
+            },
+            theme: {
+                button: {
+                    backgroundColor: '#d4af37',
+                    iconColor: '#000000',
+                    size: 'large'
+                },
+                chat: {
+                    backgroundColor: '#0a0a0a',
+                    textColor: '#f5f5f5',
+                    headerBackgroundColor: '#000000',
+                    headerTextColor: '#d4af37',
+                    botMessageBackgroundColor: '#1a1a1a',
+                    botMessageTextColor: '#f5f5f5',
+                    userMessageBackgroundColor: '#d4af37',
+                    userMessageTextColor: '#000000',
+                    inputBackgroundColor: '#1a1a1a',
+                    inputTextColor: '#f5f5f5',
+                    inputBorderColor: '#333333'
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
