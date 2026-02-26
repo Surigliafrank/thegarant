@@ -36,7 +36,7 @@
                 Your personal AI travel expert. Tell us your dream trip and we'll craft a complete,
                 tailor-made itinerary with flights, hotels, restaurants, and unforgettable experiences.
             </p>
-            <button class="cta-button" onclick="document.querySelector('.n8n-chat button.chat-toggle, .n8n-chat [data-chat-toggle]')?.click()">
+            <button class="cta-button" onclick="openChat()">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
                 Start Planning Your Trip
             </button>
@@ -125,7 +125,7 @@
     <section class="cta-section">
         <h2 class="section-title">Ready to Plan Your Next Adventure?</h2>
         <p>Available 24/7. Start chatting with our AI concierge and get your personalized itinerary.</p>
-        <button class="cta-button" onclick="document.querySelector('.n8n-chat button.chat-toggle, .n8n-chat [data-chat-toggle]')?.click()">
+        <button class="cta-button" onclick="openChat()">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
             Chat With Us Now
         </button>
@@ -162,6 +162,15 @@
 
     <!-- n8n Chat Widget -->
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script>
+        function openChat() {
+            var btn = document.querySelector('#n8n-chat .chat-toggle')
+                || document.querySelector('#n8n-chat button')
+                || document.querySelector('[data-chat-toggle]')
+                || document.querySelector('.n8n-chat button');
+            if (btn) { btn.click(); }
+        }
+    </script>
     <script type="module">
         import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
         createChat({
