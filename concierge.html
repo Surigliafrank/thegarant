@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Travel Concierge - The Garant Pro</title>
+    <meta name="description" content="Chat with your personal AI travel concierge. Get personalized itineraries, flight and hotel recommendations, and more.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-logo">
+            <img src="logo.png" alt="The Garant">
+        </a>
+        <button class="menu-toggle" onclick="document.querySelector('.navbar-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+        <ul class="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="flights.html">Flights</a></li>
+            <li><a href="hotels.html">Hotels</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+    </nav>
+
+    <!-- Concierge Hero -->
+    <section class="concierge-hero">
+        <h1>Your AI Travel Concierge</h1>
+        <p>Tell me about your dream trip and I'll create a complete, personalized itinerary just for you.</p>
+    </section>
+
+    <!-- Chat Container -->
+    <div class="concierge-chat-container">
+        <!-- Gate message for non-subscribers -->
+        <noscript>
+            <div class="concierge-gate">
+                <h2>Subscribe to Access the Concierge</h2>
+                <p>The AI travel concierge is available to Pro subscribers. Start your 7-day free trial to unlock personalized itineraries.</p>
+                <a href="pricing.html" class="cta-button">Start Free Trial — $4.99/mo</a>
+            </div>
+        </noscript>
+    </div>
+
+    <!-- How to use -->
+    <section class="features" style="padding-top:2rem;">
+        <h2 class="section-title">How to Use the Concierge</h2>
+        <p class="section-subtitle">Get the most out of your AI travel planner</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">&#127758;</div>
+                <h3>Tell Us Your Destination</h3>
+                <p>Start by telling the concierge where you want to go, or ask for suggestions based on your interests and budget.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128221;</div>
+                <h3>Share Your Preferences</h3>
+                <p>Budget range, travel dates, interests (food, culture, adventure), accommodation style — the more you share, the better the recommendations.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#127891;</div>
+                <h3>Get Your Itinerary</h3>
+                <p>Receive a complete travel plan with flights, hotels, restaurants, and experiences. Ask follow-up questions or request changes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="The Garant">
+                <p>Your AI-powered travel concierge. Search flights, hotels, and experiences — all in one place.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Search</h4>
+                <ul>
+                    <li><a href="flights.html">Flights</a></li>
+                    <li><a href="hotels.html">Hotels</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Garant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- n8n Chat Widget (only on this page) -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+        createChat({
+            webhookUrl: 'https://thegarant.app.n8n.cloud/webhook/travel-concierge-chat/chat',
+            mode: 'window',
+            chatInputKey: 'chatInput',
+            metadata: {},
+            showWelcomeScreen: false,
+            initialMessages: [
+                'Welcome to The Garant Pro! I\'m your personal AI travel concierge.',
+                'Tell me about your dream trip — where would you like to go? I\'ll create a complete itinerary with flights, hotels, restaurants, and experiences tailored to your preferences.'
+            ],
+            i18n: {
+                en: {
+                    title: 'The Garant Pro',
+                    subtitle: 'Your AI Travel Concierge',
+                    inputPlaceholder: 'Describe your dream trip...',
+                    getStarted: 'Start Planning',
+                    footer: ''
+                }
+            },
+            theme: {
+                button: {
+                    backgroundColor: '#d4af37',
+                    iconColor: '#000000',
+                    size: 'large'
+                },
+                chat: {
+                    backgroundColor: '#0a0a0a',
+                    textColor: '#f5f5f5',
+                    headerBackgroundColor: '#000000',
+                    headerTextColor: '#d4af37',
+                    botMessageBackgroundColor: '#1a1a1a',
+                    botMessageTextColor: '#f5f5f5',
+                    userMessageBackgroundColor: '#d4af37',
+                    userMessageTextColor: '#000000',
+                    inputBackgroundColor: '#1a1a1a',
+                    inputTextColor: '#f5f5f5',
+                    inputBorderColor: '#333333'
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

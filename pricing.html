@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - The Garant</title>
+    <meta name="description" content="The Garant pricing plans. Search flights and hotels for free, or upgrade to Pro for a personal AI travel concierge at $4.99/month.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-logo">
+            <img src="logo.png" alt="The Garant">
+        </a>
+        <button class="menu-toggle" onclick="document.querySelector('.navbar-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+        <ul class="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="flights.html">Flights</a></li>
+            <li><a href="hotels.html">Hotels</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="pricing.html" class="active">Pricing</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Simple, Transparent Pricing</h1>
+        <p>Search for free. Upgrade when you want a personal travel concierge.</p>
+    </section>
+
+    <!-- Pricing Cards -->
+    <div class="pricing-section">
+        <div class="pricing-grid">
+
+            <!-- Free Plan -->
+            <div class="pricing-card">
+                <h3>Free</h3>
+                <div class="pricing-price">$0</div>
+                <p class="pricing-trial">Free forever</p>
+                <ul class="pricing-features">
+                    <li>Search and compare flights</li>
+                    <li>Search and compare hotels</li>
+                    <li>Read destination guides</li>
+                    <li>Read travel blog articles</li>
+                    <li>Travel tips and advice</li>
+                    <li class="disabled">AI travel concierge</li>
+                    <li class="disabled">Personalized itineraries</li>
+                    <li class="disabled">24/7 chat support</li>
+                </ul>
+                <a href="flights.html" class="cta-button-outline">Start Searching</a>
+            </div>
+
+            <!-- Pro Plan -->
+            <div class="pricing-card featured">
+                <span class="pricing-badge">Most Popular</span>
+                <h3>Pro</h3>
+                <div class="pricing-price">$4.99 <span>/ month</span></div>
+                <p class="pricing-trial">7-day free trial included</p>
+                <ul class="pricing-features">
+                    <li>Everything in Free</li>
+                    <li>AI travel concierge chat</li>
+                    <li>Personalized itineraries</li>
+                    <li>Flight recommendations</li>
+                    <li>Hotel recommendations</li>
+                    <li>Restaurant suggestions</li>
+                    <li>Experience curation</li>
+                    <li>24/7 unlimited chat</li>
+                </ul>
+                <a href="YOUR_STRIPE_PAYMENT_LINK" class="cta-button">Start Free Trial</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+        <h2 class="section-title" style="margin-bottom:2rem;">Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>What does the free plan include?</h3>
+            <p>The free plan gives you full access to our flight and hotel search engines, destination guides, and travel blog. You can search and compare prices from hundreds of providers at no cost.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What is the AI travel concierge?</h3>
+            <p>The AI concierge is your personal travel planner. Chat with it about your dream trip and it will create complete, personalized itineraries with flight options, hotel recommendations, restaurant suggestions, and unique experiences — all tailored to your budget and preferences.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How does the 7-day free trial work?</h3>
+            <p>When you sign up for Pro, you get 7 days of full access to the AI concierge for free. You can cancel anytime during the trial and you won't be charged. After 7 days, you'll be billed $4.99/month.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I cancel anytime?</h3>
+            <p>Yes, absolutely. You can cancel your Pro subscription at any time from your Stripe billing portal. There are no contracts, no cancellation fees, and no questions asked.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What payment methods do you accept?</h3>
+            <p>We accept all major credit and debit cards (Visa, Mastercard, American Express) through our secure payment partner Stripe. Your payment information is never stored on our servers.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Is the concierge available in my language?</h3>
+            <p>Yes! Our AI concierge speaks multiple languages. Simply write to it in your preferred language and it will respond accordingly. It supports English, Italian, Spanish, French, German, Portuguese, and many more.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="The Garant">
+                <p>Your AI-powered travel concierge. Search flights, hotels, and experiences — all in one place.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Search</h4>
+                <ul>
+                    <li><a href="flights.html">Flights</a></li>
+                    <li><a href="hotels.html">Hotels</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Garant. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
