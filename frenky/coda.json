@@ -1,5 +1,16 @@
 {
   "versione": "1.0",
-  "ultimo_aggiornamento": "2026-03-12T23:55:26.783Z",
-  "tasks": []
+  "ultimo_aggiornamento": "2026-03-13T12:53:52.378Z",
+  "tasks": [
+    {
+      "id": "t-001",
+      "timestamp": "2026-03-13T12:53:52.378Z",
+      "status": "pending",
+      "priorita": "alta",
+      "richiesta": "Crea la sezione Eventi per thegarant.com:\n1. **Crea `events.html`** - Pagina principale eventi\n- Hero section 'Eventi & Esperienze nel Mondo'\n- Griglia responsive per card eventi (ultimi 12)\n- Ogni card: immagine, titolo, data, luogo, badge tipo evento, CTA\n- Styling coerente con index.html\n2. **Crea cartella `events/`** per singoli articoli\n3. **Template singolo evento** (`events/template.html`):\n- Header con immagine hero\n- Info evento (data, luogo, tipo)\n- Descrizione e perché visitarlo\n- Sezione 'Consigli di viaggio'\n- CTA assicurazione/prenotazione\n- Breadcrumb e navigazione\n4. **Aggiorna menu navigazione** in tutte le pagine HTML:\n- Aggiungi link 'Eventi' tra servizi e blog\n- Mantieni stile esistente\n5. **CSS necessario** in style.css\nMantieni design moderno, mobile-first, coerente con il sito esistente.",
+      "contesto": "Questo serve per il Bot Publisher che pubblicherà automaticamente 3 eventi/settimana (Lun-Mar-Mer ore 12:00) cercati via Perplexity e scritti dagli agenti marketing.",
+      "risposta": null,
+      "completato_il": null
+    }
+  ]
 }
